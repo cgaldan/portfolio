@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christos Gkaldanidis | Software Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/suitcase.png" type="image/png" />
+    </head>
+    <body>
+
+        <button class="theme-toggle" onclick="toggleTheme()">
+            <img src="assets/theme.png" width="40" height="40">
+        </button>
+
+        <header class="hero">    
+            <img src="static/profile.jpg" class="avatar">
+            <h1>Christos Gkaldanidis</h1>
+            <p>Software Developer • Go • Systems • Web</p>
+            <button onclick="scrollToProjects()">View Projects</button>
+            <a href="static/cv.pdf" download class="cv-btn">Download CV</a>
+        </header>
+
+        <section class="about reveal">
+            <h2>About Me</h2>
+            <p>
+            I build real-world applications focusing on performance, clean code, and learning by doing.
+            </p>
+        </section>
+
+        <section class="skills reveal">
+            <h2>Skills</h2>
+            <div class="skill-list">
+                <span>Go</span>
+                <span>C</span>
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Linux</span>
+            </div>
+        </section>
+
+        <section class="projects reveal" id="projects">
+            <h2>Projects</h2>
+
+            <div class="project-grid">
+
+                <div class="card">
+                <h3>ASCII Art Generator</h3>
+                <p>CLI + Web tool that converts text to banner art with colors.</p>
+                </div>
+
+                <div class="card">
+                <h3>ATM Management System</h3>
+                <p>C program simulating banking operations.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="contact reveal">
+            <h2>Contact</h2>
+            <a href="chrisgaldan@gmail.com" class="link-btn">
+                Email
+            </a>
+            <a href="https://www.linkedin.com/in/chrisgaldan/" target="_blank" class="link-btn">
+                LinkedIn Profile
+            </a>
+            <a href="https://github.com/cgaldan" target="_blank" class="link-btn">
+                GitHub
+            </a>
+        </section>
+
+        <script src="script.js"></script>
+    </body>
+</html>

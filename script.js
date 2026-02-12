@@ -67,8 +67,6 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
-    } else {
-      entry.target.classList.remove("show");
     }
   });
 }, observerOptions);
@@ -76,3 +74,7 @@ const observer = new IntersectionObserver(entries => {
 reveals.forEach(element => {
     observer.observe(element);
 });
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     updateActiveNav();
+// });

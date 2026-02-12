@@ -1,6 +1,28 @@
-function scrollToProjects() {
-  document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
+function scrollToSection(selector) {
+    const element = document.querySelector(selector);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
 }
+
+function updateActiveNav() {
+    const sections = document.querySelectorAll('section, header');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        const scrollPos = window.scrollY + 100;
+
+        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            const activeLink = document.querySelector(`[data-section="${section.id}"]`);
+            if (activeLink) activeLink.classList.add('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', updateActiveNav);
 
 function toggleTheme() {
     const body = document.body;

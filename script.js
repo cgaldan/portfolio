@@ -71,9 +71,7 @@ const observer = new IntersectionObserver(entries => {
       entry.target.classList.remove("show");
     }
   });
-}, {
-  threshold: 0.3
-});
+}, observerOptions);
 
 reveals.forEach(element => {
     observer.observe(element);

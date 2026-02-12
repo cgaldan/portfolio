@@ -186,10 +186,10 @@ a:hover {
     animation: float 3s ease-in-out infinite;
 }
 
-@keyframes float {
+/* @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
-}
+} */
 
 .hero-text h1 {
     background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);

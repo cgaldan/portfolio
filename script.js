@@ -3,16 +3,43 @@ function scrollToProjects() {
 }
 
 function toggleTheme() {
-  document.body.classList.toggle("light");
-  localStorage.setItem("theme", document.body.classList.contains("light") ? "light" : "dark");
+    const body = document.body;
+    const isLight = body.classList.contains('light');
+    
+    if (isLight) {
+        body.classList.remove('light');
+        localStorage.setItem('theme', 'dark');
+        updateThemeIcon();
+    } else {
+        body.classList.add('light');
+        localStorage.setItem('theme', 'light');
+        updateThemeIcon();
+    }
 }
 
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme === "light") {
-  document.body.classList.add("light");
+function updateThemeIcon() {
+    const icon = document.querySelector('.theme-icon');
+    if (document.body.classList.contains('light')) {
+        icon.textContent = '☀️';
+    } else {
+        icon.textContent = '🌙';
+    }
 }
 
-const reveals = document.querySelectorAll(".reveal");
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+    document.body.classList.add('light');
+} else {
+    document.body.classList.remove('light');
+}
+updateThemeIcon();
+
+const reveals = document.querySelectorAll('.reveal');
+
+const observerOptions = {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+};
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -26,4 +53,6 @@ const observer = new IntersectionObserver(entries => {
   threshold: 0.3
 });
 
-reveals.forEach(r => observer.observe(r));
+reveals.forEach(element => {
+    observer.observe(element);
+});

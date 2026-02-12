@@ -1,27 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Christos Gkaldanidis | Software Developer</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="assets/suitcase.png" type="image/png" />
-    </head>
-    <body>
+    <link rel="icon" href="assets/favicon.png" type="image/png" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">CG</a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+                <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+                <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
 
-        <button class="theme-toggle" onclick="toggleTheme()">
-            <img src="assets/theme.png" width="40" height="40">
-        </button>
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <img src="static/profile.jpg" class="avatar" alt="Christos Gkaldanidis profile picture">
+            <div class="hero-text">
+                <h1>Christos Gkaldanidis</h1>
+                <p class="subtitle">Backend Developer • Go • Systems • Web</p>
+                <p class="tagline">Crafting robust, scalable solutions with clean code and thoughtful design</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('#projects')">View My Work</button>
+                    <a href="static/cv.pdf" download class="btn btn-secondary">Download CV</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+        </div>
+    </header>
 
-        <header class="hero">    
-            <img src="static/profile.jpg" class="avatar">
-            <h1>Christos Gkaldanidis</h1>
-            <p>Software Developer • Go • Systems • Web</p>
-            <button onclick="scrollToProjects()">View Projects</button>
-            <a href="static/cv.pdf" download class="cv-btn">Download CV</a>
-        </header>
-
-        <section class="about reveal">
+        <section class="about reveal" id="about">
             <h2>About Me</h2>
             <p>
             Hi!<br><br>
@@ -36,7 +57,7 @@
             </p>
         </section>
 
-        <section class="skills reveal">
+        <section class="skills reveal" id="skills">
             <h2>Skills</h2>
             <h3>Programming Languages</h3>
             <div class="skill-list">
@@ -66,10 +87,20 @@
 
             <div class="project-grid">
 
-                <div class="card">
-                <h3>ASCII Art Generator</h3>
+                <a href="https://github.com/cgaldan/vacation-portal" class="card">
+                <h3>Vacation Portal</h3>
                 <p>CLI + Web tool that converts text to banner art with colors.</p>
-                </div>
+                </a>
+
+                <a href="https://github.com/cgaldan/vacation-portal" class="card">
+                <h3>Vacation Portal</h3>
+                <p>CLI + Web tool that converts text to banner art with colors.</p>
+                </a>
+
+                <a href="https://github.com/cgaldan/vacation-portal" class="card">
+                <h3>Vacation Portal</h3>
+                <p>CLI + Web tool that converts text to banner art with colors.</p>
+                </a>
 
                 <div class="card">
                 <h3>ATM Management System</h3>
@@ -79,7 +110,7 @@
             </div>
         </section>
 
-        <section class="contact reveal">
+        <section class="contact reveal" id="contact">
             <h2>Contact</h2>
             <a href="chrisgaldan@gmail.com" class="link-btn">
                 Email

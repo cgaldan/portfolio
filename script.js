@@ -25,7 +25,7 @@ function updateActiveNav() {
 window.addEventListener('scroll', updateActiveNav);
 
 function toggleTheme() {
-    const body = document.body;
+    const { body } = document;
     const isLight = body.classList.contains('light');
     
     if (isLight) {

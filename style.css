@@ -446,6 +446,14 @@ section {
 
 .project-icon {
     font-size: 2rem;
+    line-height: 1;
+}
+
+.project-icon img {
+    height: 2rem;
+    width: 2rem;
+    object-fit: contain;
+    display: block;
 }
 
 .project-status {

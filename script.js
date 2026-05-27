@@ -9,17 +9,23 @@ function updateActiveNav() {
     const sections = document.querySelectorAll('section, header');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        const scrollPos = window.scrollY + 100;
+    const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+    let currentId = atBottom ? sections[sections.length - 1].id : null;
 
-        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-            navLinks.forEach(link => link.classList.remove('active'));
-            const activeLink = document.querySelector(`[data-section="${section.id}"]`);
-            if (activeLink) activeLink.classList.add('active');
-        }
-    });
+    if (!atBottom) {
+        const scrollPos = window.scrollY + 100;
+        sections.forEach(section => {
+            if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.clientHeight) {
+                currentId = section.id;
+            }
+        });
+    }
+
+    if (currentId) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        const activeLink = document.querySelector(`[data-section="${currentId}"]`);
+        if (activeLink) activeLink.classList.add('active');
+    }
 }
 
 window.addEventListener('scroll', updateActiveNav);
